@@ -1,0 +1,14 @@
+{
+  "name" : "Chappelle",
+  "description" : "",
+  "thumb" : "images/image.png",
+  "helpers": [
+    "Themes::Chappelle::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["chappelle_on_install_theme"],
+    "on_inactive": ["chappelle_on_uninstall_theme"],
+    "on_theme_settings": ["chappelle_settings"]
+    //here all your hooks
+  }
+}
