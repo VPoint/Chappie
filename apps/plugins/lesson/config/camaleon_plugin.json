@@ -1,0 +1,14 @@
+{
+  "title": "Lessons",
+  "descr": "",
+  "key": "lesson", // must be the name of the folder of your plugin, sample: app/views/plugins/<my_plugin> ==> 'my_plugin'
+  "helpers": [
+    "Plugins::Lesson::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["lesson_on_active"],
+    "on_inactive": ["lesson_on_inactive"],
+    "plugin_options": ["lesson_on_plugin_options"]
+    //here you can add all your hooks (read documentation)
+  }
+}
