@@ -3,9 +3,7 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
 # Add a script to be executed every time the container starts.
 
-RUN bitnami-pkg install ruby-2.5.1 --checksum a81395976c85e8b7c8da3c1db6385d0e909bd05d9a3c1527f8fa36b8eb093d84
-
-ENV PATH=/opt/bitnami/ruby/bin:$PATH
+RUN sudo apt-get install ruby-full
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
