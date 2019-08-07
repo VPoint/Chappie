@@ -1,7 +1,5 @@
 # Chappie
 
-
-
 The purpose of this project is to provide a unified backend for the RCCG Q1 zonal websites. This backend will be designed using Ruby primarily with open APIs that will be accessed using other front-end frameworks.
 
 # README
