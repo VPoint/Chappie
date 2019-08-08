@@ -11,3 +11,6 @@
  *= require camaleon_cms/bootstrap.min
  *= require font-awesome
  */
+
+require camaleon_cms/bootstrap.min
+require font-awesome

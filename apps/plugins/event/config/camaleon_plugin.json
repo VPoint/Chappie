@@ -10,5 +10,8 @@
     "on_inactive": ["event_on_inactive"],
     "plugin_options": ["event_on_plugin_options"]
     //here you can add all your hooks (read documentation)
+    "admin_before_load": [
+      "event_admin_before_load"
+    ]
   }
 }
