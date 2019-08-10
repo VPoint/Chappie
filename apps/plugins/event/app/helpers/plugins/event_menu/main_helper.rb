@@ -7,6 +7,6 @@ module class Plugins::EventMenu::AdminController < CamaleonCms::Apps::PluginsAdm
     ]
 
     # add menus after certain menu
-    admin_menu_insert_menu_after("content", "my_plugin_menu", {icon: 'briefcase', title: 'My Menu Group', url: "", items: sub_items1})
+    admin_menu_insert_menu_after("content", "event_menu", {icon: 'briefcase', title: 'My Menu Group', url: "", items: sub_items1})
 
   end
