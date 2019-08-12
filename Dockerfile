@@ -1,7 +1,7 @@
 FROM ruby:2.5.5
 RUN apt-get update -qq && apt-get install -y build-essential
-# for postgres
-RUN apt-get install -y libpq-dev
+# for sqlite3
+RUN apt-get install -y sqlite3
 
 RUN apt-get install -y nodejs
 
@@ -17,9 +17,9 @@ ENV APP_HOME /app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 ADD Gemfile* $APP_HOME/
-ADD lib/plugin_routes* $APP_HOME/
+ADD lib/plugin_routes.rb $APP_HOME/
 
-RUN bundle install --without production
+RUN bundle install
 
 COPY . $APP_HOME
 
