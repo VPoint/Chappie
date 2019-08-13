@@ -1,29 +1,47 @@
 module Themes::Chappelle::MainHelper
   def self.included(klass)
     # klass.helper_method [:my_helper_method] rescue "" # here your methods accessible from views
-    klass.helper_method [:perspective_social_networks] rescue "" # here your methods accessible from views
+    klass.helper_method [:chappelle_social_networks] rescue "" # here your methods accessible from views
+  end
+
+    # print social links
+  def chappelle_social_networks
+    res = []
+    if(fb = current_theme.the_field('social_fb')).present?
+      res << "<li><a href='#{fb}' class='facebook'> </a></li>"
+    end
+
+    if(p = current_theme.the_field('social_pi')).present?
+      res << "<li><a href='#{p}' class='p'> </a></li>"
+    end
+
+    if(g = current_theme.the_field('social_go')).present?
+      res << "<li><a href='#{g}' class='g'> </a></li>"
+    end
+
+    if(t = current_theme.the_field('social_tw')).present?
+      res << "<li><a href='#{t}' class='twitter'> </a></li>"
+    end
+    res.join(' ')
   end
 
   def chappelle_settings(theme)
     # callback to save custom values of fields added in my_theme/views/admin/settings.html.erb
   end
 
-  # callback executed after theme uninstalled
-  def chappelle_on_uninstall_theme(theme)
-  end
 
   # callback called after theme installed
-  def chapelle_theme_on_install_theme(theme)
+  def chappelle_on_install_theme(theme)
     # Sample Custom Field
-    unless theme.get_field_groups.where(slug: "fields").any?
-      group = theme.add_field_group({name: "Main Settings", slug: "fields", description: ""})
-      group.add_field({"name"=>"Background color", "slug"=>"bg_color"},{field_key: "colorpicker"})
-      group.add_field({"name"=>"Links color", "slug"=>"links_color"},{field_key: "colorpicker"})
-      group.add_field({"name"=>"Background image", "slug"=>"bg"},{field_key: "image"})
-    end
+    #unless theme.get_field_groups.where(slug: "fields").any?
+    #  group = theme.add_field_group({name: "Main Settings", slug: "fields", description: ""})
+    #  group.add_field({"name"=>"Background color", "slug"=>"bg_color"},{field_key: "colorpicker"})
+    #  group.add_field({"name"=>"Links color", "slug"=>"links_color"},{field_key: "colorpicker"})
+    #  group.add_field({"name"=>"Background image", "slug"=>"bg"},{field_key: "image"})
+    #end
 
     # # Sample Meta Value
-    # theme.set_meta("installed_at", Time.current.to_s) # save a custom value
+    theme.set_meta("installed_at", Time.current.to_s) # save a custom value
     # return if theme.get_option('installed_at').present? # it was installed (re enabling...)
     # lorem = 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.'
 
@@ -120,30 +138,13 @@ module Themes::Chappelle::MainHelper
     # group = theme.add_field_group({name: "Home Page", slug: "home_page"})
     # group.add_field({"name"=>"Home Page", "slug"=>"home_page", description: "Select your home page"},{field_key: "posts", post_types: "all"})
 
-    group = theme.add_field_group({name: "Footer", slug: "footer"})
-    group.add_field({"name"=>"Column Left", "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
-    group.add_field({"name"=>"Column Right", "slug"=>"footer_right"}, {field_key: "editor", translate: true, default_value: "<h4>About Theme</h4><p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>"})
+    # group = theme.add_field_group({name: "Footer", slug: "footer"})
+    # group.add_field({"name"=>"Column Left", "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
+    # group.add_field({"name"=>"Column Right", "slug"=>"footer_right"}, {field_key: "editor", translate: true, default_value: "<h4>About Theme</h4><p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>"})
 
   end
 
-  # print social links
-  def chapelle_social_networks
-    # res = []
-    # if(fb = current_theme.the_field('social_fb')).present?
-    #   res << "<li><a href='#{fb}' class='facebook'> </a></li>"
-    # end
-
-    # if(p = current_theme.the_field('social_pi')).present?
-    #   res << "<li><a href='#{p}' class='p'> </a></li>"
-    # end
-
-    # if(g = current_theme.the_field('social_go')).present?
-    #   res << "<li><a href='#{g}' class='g'> </a></li>"
-    # end
-
-    # if(t = current_theme.the_field('social_tw')).present?
-    #   res << "<li><a href='#{t}' class='twitter'> </a></li>"
-    # end
-    # res.join(' ')
+    # callback executed after theme uninstalled
+  def chappelle_on_uninstall_theme(theme)
   end
 end
