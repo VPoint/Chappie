@@ -45,10 +45,10 @@ module Themes::Chappelle::MainHelper
     # return if theme.get_option('installed_at').present? # it was installed (re enabling...)
     # lorem = 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.'
 
-    # # Home Slider
-    # gr = current_theme.add_field_group({name: "Home Slider", slug: "home_slider", is_repeat: true})
-    # gr.add_field({"name"=>"Title", "slug"=>"home_slider_title"},{field_key: "text_box", translate: true})
-    # gr.add_field({"name"=>"Description", "slug"=>"home_slider_descr"},{field_key: "text_box", translate: true})
+    # Home Slider
+    gr = current_theme.add_field_group({name: "Home Slider", slug: "home_slider", is_repeat: true})
+    gr.add_field({"name"=>"Title", "slug"=>"home_slider_title"},{field_key: "text_box", translate: true})
+    gr.add_field({"name"=>"Description", "slug"=>"home_slider_descr"},{field_key: "text_box", translate: true})
 
     gr = current_theme.add_field_group({name: "Social networks", slug: "social_networks"})
     gr.add_field({"name"=>"Facebook", "slug"=>"social_fb"},{field_key: "url", translate: true})
@@ -138,9 +138,9 @@ module Themes::Chappelle::MainHelper
     # group = theme.add_field_group({name: "Home Page", slug: "home_page"})
     # group.add_field({"name"=>"Home Page", "slug"=>"home_page", description: "Select your home page"},{field_key: "posts", post_types: "all"})
 
-    # group = theme.add_field_group({name: "Footer", slug: "footer"})
-    # group.add_field({"name"=>"Column Left", "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
-    # group.add_field({"name"=>"Column Right", "slug"=>"footer_right"}, {field_key: "editor", translate: true, default_value: "<h4>About Theme</h4><p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>"})
+    gr = theme.add_field_group({name: "Footer", slug: "footer"})
+    gr.add_field({"name"=>"Column Left", "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
+    gr.add_field({"name"=>"Column Right", "slug"=>"footer_right"}, {field_key: "editor", translate: true, default_value: "<h4>About Theme</h4><p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>"})
 
   end
 
