@@ -137,8 +137,8 @@ module Themes::Chappelle::MainHelper
     #gr.add_field({name: "Twitter Url", "slug"=>"about_member_tw"}, {"field_key"=>"url"})
 
     # theme.set_option('installed_at', Time.current.to_s)
-    # group = theme.add_field_group({name: "Home Page", slug: "home_page"})
-    # group.add_field({"name"=>"Home Page", "slug"=>"home_page", description: "Select your home page"},{field_key: "posts", post_types: "all"})
+    group = theme.add_field_group({name: "Home Page", slug: "home_page"})
+    group.add_field({"name"=>"Home Page", "slug"=>"home_page", description: "Select your home page"},{field_key: "posts", post_types: "all"})
 
     gr = theme.add_field_group({name: "Footer", slug: "footer"})
     gr.add_field({"name"=>"Column Left", "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
