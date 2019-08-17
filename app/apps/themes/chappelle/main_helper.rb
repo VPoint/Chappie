@@ -33,12 +33,12 @@ module Themes::Chappelle::MainHelper
   # callback called after theme installed
   def chappelle_on_install_theme(theme)
     # Sample Custom Field
-    #unless theme.get_field_groups.where(slug: "fields").any?
-    #  group = theme.add_field_group({name: "Main Settings", slug: "fields", description: ""})
-    #  group.add_field({"name"=>"Background color", "slug"=>"bg_color"},{field_key: "colorpicker"})
-    #  group.add_field({"name"=>"Links color", "slug"=>"links_color"},{field_key: "colorpicker"})
-    #  group.add_field({"name"=>"Background image", "slug"=>"bg"},{field_key: "image"})
-    #end
+    unless theme.get_field_groups.where(slug: "fields").any?
+      group = theme.add_field_group({name: "Main Settings", slug: "fields", description: ""})
+      group.add_field({"name"=>"Background color", "slug"=>"bg_color"},{field_key: "colorpicker"})
+      group.add_field({"name"=>"Links color", "slug"=>"links_color"},{field_key: "colorpicker"})
+      group.add_field({"name"=>"Background image", "slug"=>"bg"},{field_key: "image"})
+    end
 
     # # Sample Meta Value
     theme.set_meta("installed_at", Time.current.to_s) # save a custom value
@@ -147,5 +147,6 @@ module Themes::Chappelle::MainHelper
 
     # callback executed after theme uninstalled
   def chappelle_on_uninstall_theme(theme)
+
   end
 end
